@@ -1,13 +1,44 @@
 # lab5
 CMPT225 Lab5
 
+For this lab you write five recursive methods: two that work on numbers, two that work on strings and one that works on an int array. Also, if the base case is missing, or a call does not get closer to it, the method calls itself forever and Java stops the program with a `StackOverflowError`.
+
 ## Objectives
+* Writing a recursive method with a base case and a recursive case.
+* Makibg every recursive call work on a smaller input, so that the recursion always reaches a base case.
+* Using recursion on numbers, strings and arrays.
 
 ## Files
+| File | What to do |
+|:--|:--|
+| `Recursion.java` | Complete the five methods marked `TODO`. |
+
+Each method currently returns a placeholder value (`0`, `""` or `false`). Replace that line with your code.
 
 ## Lab Rules
+1. **Keep the given interface.** Do not rename the class or the methods, change any parameter or return type, or replace the `package` line. You may add helper methods.
+2. **Use recursion, not loops.** Each method must call itself, or call a helper method that calls itself. Do not use `for`, `while` or `do-while` in the five methods or in any helper they call. Do not use library methods that do the work for you, such as `StringBuilder.reverse()`. A method that uses a loop, or never calls itself, scores 0. 
 
 ## Rubric
+**10 test cases, 1 mark each**. 
+- Each test case makes several calls. It earns its mark only if **every** call returns the value shown.
+- A test case scores 0 if any of its calls throws an exception (for example a `StackOverflowError`), or if it runs for more than 3 seconds.
+- A method that breaks Rule 2 (it uses a loop, or never calls itself) scores 0.
+- A file that does not compile scores 0.
+
+| Test | Method | What it checks | Calls (each must return the value shown) | Marks |
+|:--:|:--|:--|:--|:--:|
+| 1 | `factorial` | Base case and a small n | `factorial(0)` → `1`, `factorial(1)` → `1`, `factorial(2)` → `2` | 1 |
+| 2 | `factorial` | A relatively large n | `factorial(5)` → `120`, `factorial(10)` → `3628800`, `factorial(20)` → `2432902008176640000` | 1 |
+| 3 | `sumDigits` | One- and two-digit numbers | `sumDigits(0)` → `0`, `sumDigits(7)` → `7`, `sumDigits(10)` → `1` | 1 |
+| 4 | `sumDigits` | Many digits | `sumDigits(1234)` → `10`, `sumDigits(9999)` → `36`, `sumDigits(1000000)` → `1` | 1 |
+| 5 | `reverse` | Length 0, 1 and 2 | `reverse("")` → `""`, `reverse("a")` → `"a"`, `reverse("ab")` → `"ba"` | 1 |
+| 6 | `reverse` | Longer strings | `reverse("hello")` → `"olleh"`, `reverse("recursion")` → `"noisrucer"`, `reverse("Hello, World!")` → `"!dlroW ,olleH"` | 1 |
+| 7 | `isPalindrome` | Odd-length strings | `"a"`, `"aba"` and `"racecar"` → `true`; `"abc"` and `"abcda"` → `false` | 1 |
+| 8 | `isPalindrome` | Even-length strings | `""`, `"aa"` and `"abba"` → `true`; `"ab"` and `"abca"` → `false` | 1 |
+| 9 | `sumArray` | Nothing to add, or one element | `sumArray(new int[]{}, 0)` → `0`, `sumArray(new int[]{3, 1, 4}, 3)` → `0`, `sumArray(new int[]{5}, 0)` → `5` | 1 |
+| 10 | `sumArray` | Longer arrays, other starts, negative elements | `sumArray(new int[]{3, 1, 4}, 0)` → `8`, `sumArray(new int[]{3, 1, 4, 1, 5, 9}, 2)` → `19`, `sumArray(new int[]{-2, 7, -5, 10}, 0)` → `10` | 1 |
+| | | | **Total** | **10** |
 
 ## Submission
 Zip the project directory and submit the ZIP file to Canvas.
