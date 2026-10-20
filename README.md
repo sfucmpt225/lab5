@@ -31,6 +31,8 @@ Each method currently returns a placeholder value (`0`, `""` or `false`). Replac
 | public static String reverse(String s) | 1 |
 | public static boolean isPalindrome(String s) | 1 |
 | public static int sumArray(int[] arr, int start) | 1 |
+| **Total** | 5 |
+
 
 ## Submission
 Zip the project directory and submit the ZIP file to Canvas.
